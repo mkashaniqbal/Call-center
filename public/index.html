@@ -53,7 +53,7 @@
     async function makeCall() {
       const number = document.getElementById('customerNumber').value;
 
-      const res = await fetch('https://whatsapp-messages-production.up.railway.app//make-call', {
+      const res = await fetch('https://whatsapp-messages-production.up.railway.app/make-call', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ customerNumber: number })
