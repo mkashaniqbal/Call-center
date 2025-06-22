@@ -34,10 +34,10 @@ app.post('/voice', (req, res) => {
   const VoiceResponse = twilio.twiml.VoiceResponse;
   const twiml = new VoiceResponse();
 
-  const customerNumber = req.query.customerNumber;
+  const { to } = req.body;
 
   const dial = twiml.dial();
-  dial.number(customerNumber);
+  dial.number(to);
 
   res.type('text/xml');
   res.send(twiml.toString());
