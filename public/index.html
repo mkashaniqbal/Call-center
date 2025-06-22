@@ -51,12 +51,13 @@
 
   <script>
     async function makeCall() {
-    const { to } = req.body;
-
+    const customerNumber = document.getElementById('customerNumber').value;
+const agentNumber = '+923317430602';
       const res = await fetch('https://call-center-production-4726.up.railway.app/make-call', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        to
+        body: JSON.stringify({ agentNumber, customerNumber })
+
       });
 
       const data = await res.json();
